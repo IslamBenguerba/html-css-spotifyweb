@@ -1,102 +1,176 @@
-*{
+* {
     margin: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.big-container{
+.big-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
     overflow: hidden;
     background-color: #141922;
 }
-.nav-top-primaria{
+
+.nav-top-primaria {
     background-color: #080b12;
     min-height: 100px;
     text-align: right;
     padding-right: 1rem;
     padding-top: 1rem;
 }
-.container-section{
+
+.container-section {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
     padding-top: 1rem;
     justify-content: center;
 }
-.container-section ul{
+
+
+.container-section ul {
     display: flex;
-    list-style-type:none;
+    flex-wrap: wrap;
+    list-style-type: none;
+    width: 100%;
+    max-width: 1000px;
 }
-.container-section ul a{
+
+.list-link-section {
+    flex-basis: calc((100% / 6));
+    flex-shrink: 1;
+}
+
+.container-section ul a {
     text-decoration: none;
     padding: .5rem;
     color: #7d7f84;
 }
-.btn{
+
+.btn {
     background-color: #080b12;
     border: 1px solid white;
     border-radius: 20px;
     padding: .5rem 1rem .5rem 1rem;
     color: white;
 }
-.btn:hover{
+
+.btn:hover {
     padding: .7rem 1.5rem .7rem 1.5rem;
 }
-.btn:focus{
+
+.btn:focus {
     font-size: 1rem;
     padding: 1rem 2rem 1rem 2rem;
 }
-.container-centrale{
+
+.container-centrale {
     flex-grow: 1;
     display: flex;
     overflow: hidden;
 }
-.nav-laterale{
+
+.nav-laterale {
     display: flex;
+    padding-right: 1rem;
+    padding-left: 1rem;
     flex-direction: column;
     background-color: black;
     color: #797979;
-    min-width: 150px;
 }
-.icone-nav-laterale-top{
-    flex-grow: 1;
+
+.icone-nav-laterale-top .logo-small {
+    display: none;
 }
-.nav-laterale svg{
-    padding-left: 1rem;
+
+.nav-laterale svg {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
-.container-icone-nav-laterale{
+
+.container-icone-nav-laterale {
     padding-left: 0;
 }
-.container-icone-nav-laterale i{
+
+.container-icone-nav-laterale i {
     font-weight: 900;
     padding-right: .2rem;
 }
-.container-icone-nav-laterale li{
+
+.container-icone-nav-laterale li {
     padding-top: .4rem;
     padding-bottom: .4rem;
     list-style-type: none;
 }
-.container-icone-nav-laterale a{ 
-    padding-left: 1rem;
+
+.container-icone-nav-laterale a {
     text-decoration: none;
     color: white;
 }
-.lista-playlist-laterale{
+
+.container-icone-nav-laterale a:focus {
+    margin-left: -14px;
+    padding-left: 20px;
+    border-left: 3px solid greenyellow;
+}
+
+.lista-playlist-laterale {
+    overflow: auto;
     padding-left: 0;
 }
-.lista-playlist-laterale li{
+
+.lista-playlist-laterale li {
     list-style-type: none;
 }
-.lista-playlist-laterale a{
+
+.lista-playlist-laterale a {
     padding: .2rem;
     text-decoration: none;
     color: white;
+    white-space: nowrap;
+}
+
+.line-footer-nav-laterale {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 2px;
+    width: 100%;
+    background-color: #5a5a5a;
 }
 
 
-.container-card{
+
+.incon-footer-nav-laterale i:hover {
+    color: white;
+}
+
+.incon-footer-nav-laterale span:hover {
+    color: white;
+}
+
+.incon-footer-nav-laterale span {
+    padding-left: .5rem;
+}
+
+.container-playlist-laterale {
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.lista-playlist-laterale {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+
+.link-section{
+    white-space: nowrap;
+}
+.container-card {
     /* usando qua L'OVERFLOW LA PAGINA SI COMPORTA BENE MA
      IL BANNER NON RIMANE FISSO */
     display: flex;
@@ -104,12 +178,13 @@
     overflow: hidden;
     overflow-x: hidden;
     flex-grow: 1;
-    
+
 }
+
 /* USANDOLO QUA L'OVERFLOW SARA FISSATO 
 IL BANNER SOPRA MA NON SI VEDRà CORRETTAMENTE 
 IL CONTENUTO */
-.container-cards{
+.container-cards {
     width: 100%;
     flex-grow: 1;
     margin: 0 auto;
@@ -120,10 +195,11 @@ IL CONTENUTO */
     flex-direction: column;
     padding-left: 1rem;
 }
+
 /* .barra-player{
     /* min-height: 150px; */
 
-.list-card{
+.list-card {
     display: flex;
     row-gap: 2rem;
     column-gap: 1rem;
@@ -131,9 +207,10 @@ IL CONTENUTO */
     padding-bottom: 2rem;
     padding-top: 2rem;
 }
-.card{
+
+.card {
     position: relative;
-    flex-basis: calc((100% / 6 ) - 1rem);
+    flex-basis: calc((100% / 6) - 1rem);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,17 +219,21 @@ IL CONTENUTO */
     background-position: center;
     background-size: contain; */
 }
-.card img{
+
+.card img {
     width: 100%;
     object-fit: contain;
 }
-.card img:hover{
+
+.card img:hover {
     opacity: 0.3;
 }
-.card i{
+
+.card i {
     display: none;
 }
-.card i{
+
+.card i {
     display: none;
     top: 20%;
     font-size: 4rem;
@@ -160,126 +241,259 @@ IL CONTENUTO */
     transform: translate(-50%);
     position: absolute;
 }
-.card:hover i{
+
+.card:hover i {
     display: block;
     z-index: 4;
 }
 
-.titolo-lista{
+.titolo-lista {
     padding-top: 1.5rem;
 }
-.sottotitolo-lista{
+
+.sottotitolo-lista {
     padding-top: 0.5rem;
     padding-bottom: 1rem;
 }
 
-.artists{
+.artists {
     padding-top: 1rem;
     gap: 1.5rem;
 }
-.artists > .card{
+
+.artists>.card {
     aspect-ratio: 1/1;
     border-radius: 50%;
     background-size: cover;
-    background-position: center;    
+    background-position: center;
 }
-.card.artist-1{
+
+.card.artist-1 {
     background-image: url(/img/einaudi.jpeg);
 }
-.card.card.artist-2{
+
+.card.card.artist-2 {
     background-image: url(/img/youg.jpeg);
 }
-.barra-player{
+
+.barra-player {
     display: flex;
     background-color: #282828;
     justify-content: space-between;
     color: white;
 }
-.barra-player.left{
+
+.barra-player.left {
     display: flex;
+    padding-right: .2rem;
     gap: 1rem;
     align-items: center;
 }
-.barra-player.left img{
+
+.barra-player.left img {
     height: 50px;
 }
 
-.barra-player.center{
+.barra-player.center {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding-bottom: .5rem;
 }
-.icone-player.centro{
-    padding-bottom: 1rem;
+
+
+
+.icone-player.centro i {
+    padding: 10px 15px 16px 15px;
+
 }
-.icone-player.centro i{
-    padding: 1rem;
-    
+
+.line-player {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-bottom: .5rem;
+
 }
-.line-player{
+
+.line-line-player {
+    max-width: 600px;
+    width: 100%;
     border-radius: 5px;
     height: 5px;
-    width: 200px;
+
     background-color: #5a5a5a;
-    padding-bottom: .5rem;
 }
-.barra-player.right{
+.sub-line-line{
+    max-width: 200px;
+    width: 100%;
+    border-radius: 5px;
+    height: 5px;
+    background-color: #ffff;
+}
+.sub-line-line:hover{
+    background-color: #1db954;
+}
+.barra-player.right .line-player{
+    padding: 0;
+    
+}
+.barra-player.right .line-player .line-line-player{
+    max-width: 100px;
+    width: 200px;
+}
+.barra-player.right .sub-line-line{
+    width: 40px;
+}
+
+input[type="range" i] {
+    width: 400px;
+    -webkit-appearance: none;
+
+    color: #5a5a5a;
+}
+
+::-webkit-slider-runnable-track {
+    background: #053a5f;
+    height: 0.5rem;
+}
+
+.barra-player.right {
     gap: 1rem;
     align-items: center;
 }
 
 /* effetti */
-.container-section ul a:hover{
+.container-section ul a:hover {
     color: white;
 
 }
 
-.line-section{
+.line-section {
     display: none;
-    width:  70px ;
+    width: 70px;
     height: 3px;
     background-color: greenyellow;
 }
 
-.link-nav-laterale:hover{
+.link-nav-laterale:hover {
     color: white;
 }
-.link-section:focus .line-section{
+
+.link-section:focus .line-section {
     display: block;
 }
-.playlist-nav-laterale>h3:hover{
+
+.playlist-nav-laterale>h3:hover {
     color: white;
 }
-.playlist-nav-laterale>h3:focus{
+
+.playlist-nav-laterale>h3:focus {
     border-left: 4px solid green;
     color: white;
 }
-.playlist-nav-laterale h4:hover{
-    color: white;
-}
-.nav-laterale h4:hover{
-    color: white;
-}
-.user-nav-laterale h3:hover{
-    color: white;
-}
-.user-nav-laterale i:hover{
+
+.playlist-nav-laterale h4:hover {
     color: white;
 }
 
-@media screen and (max-width: 1000px) {  
-    .card{
+.nav-laterale h4:hover {
+    color: white;
+}
+
+.user-nav-laterale h3:hover {
+    color: white;
+}
+
+.user-nav-laterale i:hover {
+    color: white;
+}
+
+/* VERSIONE PC PICCOLO */
+@media screen and (max-width: 1100px) {
+    .container-section {
+        max-width: 1000px;
+    }
+
+    .container-cards {
+        max-width: 1000px;
+    }
+
+    .card {
         flex-basis: calc((100% / 4) - 1rem);
     }
-    
+
 }
 
-@media screen and (max-width: 800px) {
-    .container-cards{
-        max-width: 750px;
+/* VERSIONE TABLET */
+@media screen and (max-width: 700px) {
+    .list-link-section {
+        flex-basis: calc((100% / 4));
     }
-    .card{
-        flex-basis: calc((100% / 2) - 1rem );
+
+    .container-section {
+        max-width: 700px;
     }
+
+    .container-cards {
+        max-width: 700px;
+    }
+
+    .card {
+        flex-basis: calc((100% / 2) - 1rem);
+    }
+    /* .barra-player{
+        width: 700px;
+    } */
+}
+
+/* VERSIONE TELEFONO */
+@media screen and (max-width: 600px) {
+    .container-cards {
+        max-width: 700px;
+    }
+
+    .card {
+        flex-basis: calc((100% / 2) - 1rem);
+    }
+
+    .icone-nav-laterale-top .logo-big {
+        display: none;
+    }
+
+    .icone-nav-laterale-top .logo-small {
+        display: block;
+        height: 4rem;
+    }
+
+    .container-icone-nav-laterale span {
+        display: none;
+    }
+
+    .container-playlist-laterale h3 {
+        display: none;
+    }
+
+    .container-playlist-laterale .lista-playlist-laterale {
+        display: none;
+    }
+
+    .incon-footer-nav-laterale i {
+        padding-left: 0;
+    }
+
+    .incon-footer-nav-laterale span {
+        display: none;
+    }
+
+    .nav-laterale{
+        text-align: center;
+    }
+    /* .barra-player{
+        max-width:  600px;
+    } */
 }
